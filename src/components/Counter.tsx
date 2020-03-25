@@ -1,18 +1,12 @@
 import React from 'react';
+import useCounter from '../hooks/useCounter';
 
-type CounterProps = {
-    count: number;
-    onIncrease: () => void;
-    onDecrease: () => void;
-    onIncreaseBy: (diff: number) => void;
-};
+/*
+    hook을 이용한 방법
+*/
+function Counter() {
+    const { count, onIncrease, onDecrease, onIncreaseBy } = useCounter();
 
-function Counter({
-    count,
-    onIncrease,
-    onDecrease,
-    onIncreaseBy
-}: CounterProps) {
     return (
         <div>
             <h1>{count}</h1>
@@ -21,6 +15,8 @@ function Counter({
             <button onClick={() => onIncreaseBy(5)}>+5</button>
         </div>
     )
+
 }
+
 
 export default Counter;
