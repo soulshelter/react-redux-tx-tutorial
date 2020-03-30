@@ -1,15 +1,15 @@
-import { ActionType, createReducer, createStandardAction } from 'typesafe-actions'
+import { ActionType, createReducer, createAction } from 'typesafe-actions'
 
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';
 const INCREASE_BY = 'counter/INCREASE_BY';
 
 
-export const increase = createStandardAction(INCREASE)();
+export const increase = createAction(INCREASE)();
 // () => ({ type: INCREASE });
-export const decrease = createStandardAction(DECREASE)();
+export const decrease = createAction(DECREASE)();
 // () => ({ type: DECREASE });
-export const increaseBy = createStandardAction(INCREASE_BY)<number>();
+export const increaseBy = createAction(INCREASE_BY)<number>();
 // (diff: number) => ({ type: INCREASE_BY, payload: diff });
 
 const actions = { increase, decrease, increaseBy }
